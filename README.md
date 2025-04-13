@@ -26,17 +26,6 @@ A sleek and responsive web app to search for any GitHub user's profile and view 
 - **Styling:** Tailwind with custom gradients and shadows
 
 
-
----
-
-## 🚧 Installation
-
-```bash
-git clone https://github.com/your-username/github-profile-searcher.git
-cd github-profile-searcher
-npm install
-npm start
-
 🔧 Usage
 Type any valid GitHub username in the input box.
 
@@ -65,5 +54,19 @@ Feel free to fork this project, submit pull requests, or open issues. All contri
 
 👤 Author
 Aditya Rai — @withsammi
+
+
+## 🚧 Installation
+
+```bash
+git clone https://github.com/your-username/github-profile-searcher.git
+cd github-profile-searcher
+npm install
+npm start
+
+---
+
+
+
 
 
