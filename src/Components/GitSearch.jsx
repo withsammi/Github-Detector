@@ -23,76 +23,76 @@ const GithubSearch = () => {
     };
 
     return (
-        <div className="min-h-screen w-full bg-[#141d2f] text-white flex flex-col items-center gap-12 p-4 font-[Space_Mono]">
-            <h1 className="text-3xl md:text-4xl font-bold mt-12 text-center">GitHub Profile Detective</h1>
+        <div className="min-h-screen w-full bg-gradient-to-r from-[#1a1a2e] to-[#16213e] text-white flex flex-col items-center gap-8 p-8 font-sans">
+            <h1 className="text-4xl md:text-5xl font-semibold text-center text-[#00b4d8] drop-shadow-lg">
+                GitHub Profile Finder
+            </h1>
 
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 items-center">
+            <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-5 items-center">
                 <input
                     type="text"
-                    placeholder="Enter Github Username...."
+                    placeholder="Enter GitHub Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="w-64 sm:w-[400px] md:w-[600px] px-5 py-4 rounded-full text-lg bg-[#2b3d65] text-white placeholder-white shadow-md outline-none border-none"
+                    className="w-64 sm:w-96 md:w-1/2 px-4 py-3 rounded-xl text-lg bg-[#0f0f13] text-white placeholder-[#8a8a8a] shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00b4d8]"
                 />
                 <button
                     type="submit"
-                    className="w-24 sm:w-28 md:w-32 py-4 rounded-full bg-[#20428a] text-white font-bold text-lg shadow-md hover:bg-[#1a3a75] transition-all"
+                    className="w-28 sm:w-32 md:w-36 py-3 px-6 rounded-xl bg-[#00b4d8] text-white font-semibold shadow-md hover:bg-[#00a3c7] transition-all"
                 >
                     Search
                 </button>
             </form>
 
-            {error && <p className="text-red-500 text-lg">{error}</p>}
+            {error && <p className="text-red-400 text-lg mt-4">{error}</p>}
 
             {profile && (
-                <div className="bg-[#1e2a47] rounded-2xl p-6 w-[90%] max-w-[720px] shadow-md text-sm md:text-base">
-                    <div className="flex gap-6">
+                <div className="bg-[#0f0f13] rounded-xl p-6 w-[90%] max-w-[800px] shadow-2xl mt-8">
+                    <div className="flex gap-8">
                         <div className="shrink-0">
                             <img
                                 src={profile.avatar_url}
                                 alt="Avatar"
-                                className="w-20 md:w-24 lg:w-28 rounded-full border-4 border-[#20428a] shadow-md"
+                                className="w-24 md:w-32 lg:w-36 rounded-full border-4 border-[#00b4d8] shadow-lg"
                             />
                         </div>
 
-                        <div className="flex flex-col">
-                            <div className="flex flex-col sm:flex-row justify-between gap-4 sm:items-center w-full">
-                                <h2 className="text-xl md:text-2xl font-bold">{profile.name}</h2>
-                                <p className="text-sm md:text-base text-gray-300">
-                                    Joined: {new Date(profile.created_at).toLocaleDateString()}
-                                </p>
-                            </div>
+                        <div className="flex flex-col text-center md:text-left">
+                            <h2 className="text-2xl md:text-3xl font-bold text-[#00b4d8]">{profile.name}</h2>
+                            <p className="text-sm md:text-base text-gray-400 mt-2">
+                                Joined: {new Date(profile.created_at).toLocaleDateString()}
+                            </p>
 
                             <a
                                 href={profile.html_url}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="text-white mt-2 hover:underline text-sm md:text-base"
+                                className="text-[#00b4d8] mt-4 text-lg hover:underline"
                             >
                                 @{profile.login}
                             </a>
 
-                            <p className="mt-4 text-gray-400 leading-relaxed">{profile.bio}</p>
+                            <p className="mt-4 text-gray-300 leading-relaxed">{profile.bio}</p>
 
-                            <div className="bg-[#141d2f] mt-4 p-4 rounded-lg flex justify-around text-center shadow-md">
+                            <div className="bg-[#1e1e28] mt-6 p-4 rounded-lg flex justify-around text-center shadow-md text-sm">
                                 <div>
                                     Repositories
                                     <br />
-                                    <span className="text-[#1b47a4] font-extrabold text-xl">{profile.public_repos}</span>
+                                    <span className="text-[#00b4d8] font-semibold text-xl">{profile.public_repos}</span>
                                 </div>
                                 <div>
                                     Followers
                                     <br />
-                                    <span className="text-[#1b47a4] font-extrabold text-xl">{profile.followers}</span>
+                                    <span className="text-[#00b4d8] font-semibold text-xl">{profile.followers}</span>
                                 </div>
                                 <div>
                                     Following
                                     <br />
-                                    <span className="text-[#1b47a4] font-extrabold text-xl">{profile.following}</span>
+                                    <span className="text-[#00b4d8] font-semibold text-xl">{profile.following}</span>
                                 </div>
                             </div>
 
-                            <div className="flex gap-10 mt-6 flex-wrap text-sm text-gray-200">
+                            <div className="flex gap-8 mt-6 justify-center md:justify-start text-sm text-gray-200">
                                 {profile.location && (
                                     <p className="flex items-center gap-2">
                                         <FaMapMarkerAlt /> {profile.location}
@@ -105,13 +105,13 @@ const GithubSearch = () => {
                                 )}
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                            <div className="flex flex-col sm:flex-row gap-5 mt-6">
                                 {profile.twitter_username && (
                                     <a
                                         href={`https://twitter.com/${profile.twitter_username}`}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="bg-[#141d2f] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#1a253f] transition-all"
+                                        className="bg-[#0f0f13] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#1a1a2e] transition-all"
                                     >
                                         <FaXTwitter /> {profile.twitter_username}
                                     </a>
@@ -120,7 +120,7 @@ const GithubSearch = () => {
                                     href={profile.html_url}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="bg-[#141d2f] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#1a253f] transition-all"
+                                    className="bg-[#0f0f13] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#1a1a2e] transition-all"
                                 >
                                     <FaGithub /> View Profile
                                 </a>
