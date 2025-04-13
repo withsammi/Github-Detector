@@ -1,36 +1,69 @@
-# Github Detector
+# 🚀 GitHub Profile Searcher
 
-Welcome to the **Github Detector**! This is a web application that allows users to search and view GitHub profiles by username. It pulls data from the GitHub API and displays the user's details such as their bio, repositories, followers, following, and more. 
+A sleek and responsive web app to search for any GitHub user's profile and view their public information in real-time.
 
-## Features
+## 📸 Screenshot
 
-- Search for GitHub users by their username.
-- Display essential user information including:
-  - Profile Picture
-  - Bio
-  - Number of Repositories
-  - Followers & Following Count
-  - Company & Location (if available)
-- Links to their GitHub and Twitter profiles.
-- Responsive design for both desktop and mobile users.
+<img src="./public/ghithubsearcherimage.jpg" alt="App Screenshot" width="100%" />
 
-## Technologies Used
 
-- **Frontend:** React
-- **Backend:** GitHub API
-- **CSS Framework:** Tailwind CSS (for responsive and modern design)
-- **Icons:** React Icons (for displaying social media and location-related icons)
-- **Axios:** For making HTTP requests to the GitHub API.
+## 🔍 Features
 
-## Installation
+- 🔎 Search for any GitHub username
+- 🖼️ Displays avatar, name, join date, bio, and GitHub handle
+- 📊 Shows public repositories, followers, and following count
+- 🌍 Links to GitHub and Twitter profiles
+- 💅 Fully responsive layout with a stylish gradient UI
+- ⚡ Real-time data fetching from GitHub API
 
-To run this project locally:
+---
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/withsammi/Github-Detector.git
+## 🛠️ Tech Stack
 
-cd Github-Detector
+- **Frontend:** React, Tailwind CSS
+- **Icons:** React Icons (FontAwesome, Phosphor Icons)
+- **API:** GitHub Public API
+- **Styling:** Tailwind with custom gradients and shadows
+
+
+
+---
+
+## 🚧 Installation
+
+```bash
+git clone https://github.com/your-username/github-profile-searcher.git
+cd github-profile-searcher
 npm install
+npm start
 
-npm run dev
+🔧 Usage
+Type any valid GitHub username in the input box.
+
+Click on the Search button.
+
+View detailed profile information with stylish layout.
+
+Click on View Profile to go to the actual GitHub page.
+
+🔑 API Used
+GitHub Users API
+
+Endpoint: https://api.github.com/users/{username}
+
+💡 Future Improvements
+Add theme toggle (light/dark)
+
+Recent repositories section
+
+Error handling animations
+
+Save recent searches
+
+🤝 Contributing
+Feel free to fork this project, submit pull requests, or open issues. All contributions are welcome!
+
+👤 Author
+Aditya Rai — @withsammi
+
+

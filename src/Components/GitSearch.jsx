@@ -47,9 +47,9 @@ const GithubSearch = () => {
             {error && <p className="text-red-300 text-lg mt-4">{error}</p>}
 
             {profile && (
-                <div className="bg-[#3b0a45] rounded-xl p-6 w-[90%] max-w-[800px] shadow-2xl mt-8">
-                    <div className="flex gap-8">
-                        <div className="shrink-0">
+                <div className="bg-[#3b0a45] rounded-xl p-6 w-full max-w-[800px] shadow-2xl mt-8">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-10">
+                        <div className="flex justify-center md:block">
                             <img
                                 src={profile.avatar_url}
                                 alt="Avatar"
@@ -57,7 +57,7 @@ const GithubSearch = () => {
                             />
                         </div>
 
-                        <div className="flex flex-col text-center md:text-left">
+                        <div className="flex-1 flex flex-col text-center md:text-left">
                             <h2 className="text-2xl md:text-3xl font-bold text-[#ff8bc2]">{profile.name}</h2>
                             <p className="text-sm md:text-base text-gray-300 mt-2">
                                 Joined: {new Date(profile.created_at).toLocaleDateString()}
@@ -72,9 +72,14 @@ const GithubSearch = () => {
                                 @{profile.login}
                             </a>
 
-                            <p className="mt-4 text-gray-200 leading-relaxed">{profile.bio}</p>
+                            {/* Bio spacing fix */}
+                            {profile.bio ? (
+                                <p className="mt-4 text-gray-200 leading-relaxed">{profile.bio}</p>
+                            ) : (
+                                <div className="mt-4 h-6"></div>
+                            )}
 
-                            <div className="bg-[#2a0845] mt-6 p-4 rounded-lg flex justify-around text-center shadow-md text-sm">
+                            <div className="bg-[#2a0845] mt-6 p-4 rounded-lg flex justify-evenly text-center shadow-md text-sm flex-wrap gap-y-4">
                                 <div>
                                     Repositories
                                     <br />
@@ -92,7 +97,7 @@ const GithubSearch = () => {
                                 </div>
                             </div>
 
-                            <div className="flex gap-8 mt-6 justify-center md:justify-start text-sm text-gray-200">
+                            <div className="flex flex-wrap gap-6 mt-6 justify-center md:justify-start text-sm text-gray-200">
                                 {profile.location && (
                                     <p className="flex items-center gap-2">
                                         <FaMapMarkerAlt /> {profile.location}
