@@ -23,43 +23,43 @@ const GithubSearch = () => {
     };
 
     return (
-        <div className="min-h-screen w-full bg-gradient-to-r from-[#1a1a2e] to-[#16213e] text-white flex flex-col items-center gap-8 p-8 font-sans">
-            <h1 className="text-4xl md:text-5xl font-semibold text-center text-[#00b4d8] drop-shadow-lg">
-                GitHub Profile Finder
+        <div className="min-h-screen w-full bg-gradient-to-b from-[#ff5c8d] to-[#4b0082] text-white flex flex-col items-center gap-10 p-8 font-['Poppins']">
+            <h1 className="text-5xl md:text-6xl font-bold text-center text-[#f2e2f2] drop-shadow-md">
+                GitHub Profile Searcher
             </h1>
 
-            <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-5 items-center">
+            <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-6 items-center">
                 <input
                     type="text"
                     placeholder="Enter GitHub Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="w-64 sm:w-96 md:w-1/2 px-4 py-3 rounded-xl text-lg bg-[#0f0f13] text-white placeholder-[#8a8a8a] shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00b4d8]"
+                    className="w-64 sm:w-96 md:w-[500px] px-6 py-4 rounded-xl text-lg bg-[#3b0a45] text-white placeholder-[#f0e6f3] shadow-lg focus:outline-none focus:ring-4 focus:ring-[#ff8bc2]"
                 />
                 <button
                     type="submit"
-                    className="w-28 sm:w-32 md:w-36 py-3 px-6 rounded-xl bg-[#00b4d8] text-white font-semibold shadow-md hover:bg-[#00a3c7] transition-all"
+                    className="w-28 sm:w-32 md:w-40 py-4 px-8 rounded-xl bg-[#ff8bc2] text-white font-semibold shadow-md hover:bg-[#ff66b3] transition-all"
                 >
                     Search
                 </button>
             </form>
 
-            {error && <p className="text-red-400 text-lg mt-4">{error}</p>}
+            {error && <p className="text-red-300 text-lg mt-4">{error}</p>}
 
             {profile && (
-                <div className="bg-[#0f0f13] rounded-xl p-6 w-[90%] max-w-[800px] shadow-2xl mt-8">
+                <div className="bg-[#3b0a45] rounded-xl p-6 w-[90%] max-w-[800px] shadow-2xl mt-8">
                     <div className="flex gap-8">
                         <div className="shrink-0">
                             <img
                                 src={profile.avatar_url}
                                 alt="Avatar"
-                                className="w-24 md:w-32 lg:w-36 rounded-full border-4 border-[#00b4d8] shadow-lg"
+                                className="w-24 md:w-32 lg:w-36 rounded-full border-4 border-[#ff8bc2] shadow-xl"
                             />
                         </div>
 
                         <div className="flex flex-col text-center md:text-left">
-                            <h2 className="text-2xl md:text-3xl font-bold text-[#00b4d8]">{profile.name}</h2>
-                            <p className="text-sm md:text-base text-gray-400 mt-2">
+                            <h2 className="text-2xl md:text-3xl font-bold text-[#ff8bc2]">{profile.name}</h2>
+                            <p className="text-sm md:text-base text-gray-300 mt-2">
                                 Joined: {new Date(profile.created_at).toLocaleDateString()}
                             </p>
 
@@ -67,28 +67,28 @@ const GithubSearch = () => {
                                 href={profile.html_url}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="text-[#00b4d8] mt-4 text-lg hover:underline"
+                                className="text-[#ff8bc2] mt-4 text-lg hover:underline"
                             >
                                 @{profile.login}
                             </a>
 
-                            <p className="mt-4 text-gray-300 leading-relaxed">{profile.bio}</p>
+                            <p className="mt-4 text-gray-200 leading-relaxed">{profile.bio}</p>
 
-                            <div className="bg-[#1e1e28] mt-6 p-4 rounded-lg flex justify-around text-center shadow-md text-sm">
+                            <div className="bg-[#2a0845] mt-6 p-4 rounded-lg flex justify-around text-center shadow-md text-sm">
                                 <div>
                                     Repositories
                                     <br />
-                                    <span className="text-[#00b4d8] font-semibold text-xl">{profile.public_repos}</span>
+                                    <span className="text-[#ff8bc2] font-semibold text-xl">{profile.public_repos}</span>
                                 </div>
                                 <div>
                                     Followers
                                     <br />
-                                    <span className="text-[#00b4d8] font-semibold text-xl">{profile.followers}</span>
+                                    <span className="text-[#ff8bc2] font-semibold text-xl">{profile.followers}</span>
                                 </div>
                                 <div>
                                     Following
                                     <br />
-                                    <span className="text-[#00b4d8] font-semibold text-xl">{profile.following}</span>
+                                    <span className="text-[#ff8bc2] font-semibold text-xl">{profile.following}</span>
                                 </div>
                             </div>
 
@@ -111,7 +111,7 @@ const GithubSearch = () => {
                                         href={`https://twitter.com/${profile.twitter_username}`}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="bg-[#0f0f13] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#1a1a2e] transition-all"
+                                        className="bg-[#3b0a45] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#4b0b5b] transition-all"
                                     >
                                         <FaXTwitter /> {profile.twitter_username}
                                     </a>
@@ -120,7 +120,7 @@ const GithubSearch = () => {
                                     href={profile.html_url}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="bg-[#0f0f13] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#1a1a2e] transition-all"
+                                    className="bg-[#3b0a45] w-full sm:w-60 py-3 px-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-[#4b0b5b] transition-all"
                                 >
                                     <FaGithub /> View Profile
                                 </a>

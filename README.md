@@ -1,12 +1,36 @@
-# React + Vite
+# Github Detector
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Github Detector**! This is a web application that allows users to search and view GitHub profiles by username. It pulls data from the GitHub API and displays the user's details such as their bio, repositories, followers, following, and more. 
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search for GitHub users by their username.
+- Display essential user information including:
+  - Profile Picture
+  - Bio
+  - Number of Repositories
+  - Followers & Following Count
+  - Company & Location (if available)
+- Links to their GitHub and Twitter profiles.
+- Responsive design for both desktop and mobile users.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React
+- **Backend:** GitHub API
+- **CSS Framework:** Tailwind CSS (for responsive and modern design)
+- **Icons:** React Icons (for displaying social media and location-related icons)
+- **Axios:** For making HTTP requests to the GitHub API.
+
+## Installation
+
+To run this project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/withsammi/Github-Detector.git
+
+cd Github-Detector
+npm install
+
+npm run dev
